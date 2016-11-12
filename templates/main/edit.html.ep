@@ -1,0 +1,27 @@
+% layout 'default';
+% title 'Welcome';
+<h2>This is the edit form</h2>
+%= form_for '/book/new' => (method => 'POST'), class => 'form_horizontal' => begin
+<div class="form-group">
+%= input_tag 'title', class => 'form-control', placeholder => 'Title'
+</div>
+<div class="form-group">
+%= input_tag 'author', class => 'form-control', placeholder => 'Author'
+</div>
+<div class="form-group">
+%= input_tag 'genres', class => 'form-control', placeholder => 'Genre'
+%= input_tag 'genres', class => 'form-control', placeholder => 'Genre'
+</div>
+<div class="form-group">
+%= input_tag 'price', class => 'form-control', placeholder => 'Price'
+</div>
+<div class="form-group">
+%= date_field 'pub_date', class => 'form-control'
+</div>
+<div class="form-group">
+%= submit_button 'Save with MongoDB', class => 'form-control', name => 'submit'
+%= submit_button 'Save with Mango', class => 'form-control', name => 'submit', disabled => 'true'
+%= submit_button 'Save with Mongoose', class => 'form-control', name => 'submit'
+</div>
+
+%= end

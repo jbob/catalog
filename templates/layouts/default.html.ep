@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title || config 'title' %></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <style type="text/css">
+      div.modal-dialog {
+        width: 60% !important;
+      }
+      .centerjumbotron {
+          text-align: center;
+      }
+      .centerjumbotron div {
+          margin-top: 4em;
+          justify-content: center;
+          display:flex;
+          align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand"><%= config 'title' %></span>
+        </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="<%= url_for '/' %>">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      % if(my $msg = flash 'msg') {
+      %   my $type = (flash 'type') || 'info';
+        <div class="alert alert-<%= $type %>" role="alert"><%= $msg %></div>
+      % }
+      <%= content %>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

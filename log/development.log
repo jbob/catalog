@@ -1,0 +1,132 @@
+[Sat Nov 12 21:15:43 2016] [debug] GET "/"
+[Sat Nov 12 21:15:43 2016] [debug] Routing to a callback
+[Sat Nov 12 21:15:43 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "index"
+[Sat Nov 12 21:15:43 2016] [debug] Rendering template "main/index.html.ep"
+[Sat Nov 12 21:15:43 2016] [debug] Rendering template "layouts/default.html.ep"
+[Sat Nov 12 21:15:43 2016] [debug] 200 OK (0.008705s, 114.877/s)
+[Sat Nov 12 21:15:46 2016] [debug] GET "/book/new"
+[Sat Nov 12 21:15:46 2016] [debug] Routing to a callback
+[Sat Nov 12 21:15:46 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "book"
+[Sat Nov 12 21:15:46 2016] [debug] Rendering template "main/edit.html.ep"
+[Sat Nov 12 21:15:46 2016] [debug] Rendering cached template "layouts/default.html.ep"
+[Sat Nov 12 21:15:46 2016] [debug] 200 OK (0.004887s, 204.625/s)
+[Sat Nov 12 21:15:59 2016] [debug] POST "/book/new"
+[Sat Nov 12 21:15:59 2016] [debug] Routing to a callback
+[Sat Nov 12 21:15:59 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "book"
+[Sat Nov 12 21:15:59 2016] [error] Attribute (price) does not pass the type constraint because: Validation failed for 'Num' with value fa at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/x86_64-linux/Moose/Object.pm line 24
+	Moose::Object::new('Book', 'HASH(0x657f808)') called at lib/Catalog/Controller/Main.pm line 91
+	Catalog::Controller::Main::book('Catalog::Controller::Main=HASH(0x64f78b8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 119
+	Mojolicious::__ANON__(undef, 'Catalog::Controller::Main=HASH(0x64f78b8)', 'CODE(0x652b7d0)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 18
+	Mojolicious::Plugins::emit_chain('Mojolicious::Plugins=HASH(0x20520b8)', 'around_action', 'Catalog::Controller::Main=HASH(0x64f78b8)', 'CODE(0x652b7d0)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 87
+	Mojolicious::Routes::_action('Catalog=HASH(0x23e6830)', 'Catalog::Controller::Main=HASH(0x64f78b8)', 'CODE(0x652b7d0)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 166
+	Mojolicious::Routes::_controller('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x64f7ba0)', 'HASH(0x655a988)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 36
+	Mojolicious::Routes::continue('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 38
+	Mojolicious::Routes::continue('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 44
+	Mojolicious::Routes::dispatch('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 110
+	Mojolicious::dispatch('Catalog=HASH(0x23e6830)', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 120
+	Mojolicious::__ANON__(undef, 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 190
+	eval {...} at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 190
+	Mojolicious::_exception('CODE(0x6564470)', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 18
+	Mojolicious::Plugins::emit_chain('Mojolicious::Plugins=HASH(0x20520b8)', 'around_dispatch', 'Mojolicious::Controller=HASH(0x64f7ba0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 126
+	Mojolicious::handler('Catalog=HASH(0x23e6830)', 'Mojo::Transaction::HTTP=HASH(0x62e67c8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server.pm line 68
+	Mojo::Server::__ANON__('Mojo::Server::Daemon=HASH(0xb7c540)', 'Mojo::Transaction::HTTP=HASH(0x62e67c8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::Server::Daemon=HASH(0xb7c540)', 'request', 'Mojo::Transaction::HTTP=HASH(0x62e67c8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 94
+	Mojo::Server::Daemon::__ANON__('Mojo::Transaction::HTTP=HASH(0x62e67c8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::Transaction::HTTP=HASH(0x62e67c8)', 'request') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Transaction/HTTP.pm line 61
+	Mojo::Transaction::HTTP::server_read('Mojo::Transaction::HTTP=HASH(0x62e67c8)', 'POST /book/new HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JContent-Length: 91^M^JCache-Control: max-age=0^M^JOrigin: http://localhost:3100^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JContent-Type: application/x-www-form-urlencoded^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/book/new^M^JAccept-Encoding: gzip, deflate, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1MzQ2LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---c1b33e1d5aac95005d12238f0cd36aad1b16fbed^M^J^M^Jtitle=a&author=b&genres=dsf&genres=e&price=fa&pub_date=2016-11-02&submit=Save+with+Mongoose') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 209
+	Mojo::Server::Daemon::_read('Mojo::Server::Daemon=HASH(0xb7c540)', '844f19367c3e86067bc858f517fe19ba', 'POST /book/new HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JContent-Length: 91^M^JCache-Control: max-age=0^M^JOrigin: http://localhost:3100^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JContent-Type: application/x-www-form-urlencoded^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/book/new^M^JAccept-Encoding: gzip, deflate, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1MzQ2LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---c1b33e1d5aac95005d12238f0cd36aad1b16fbed^M^J^M^Jtitle=a&author=b&genres=dsf&genres=e&price=fa&pub_date=2016-11-02&submit=Save+with+Mongoose') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 190
+	Mojo::Server::Daemon::__ANON__('Mojo::IOLoop::Stream=HASH(0x64e8b30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::IOLoop::Stream=HASH(0x64e8b30)', 'read', 'POST /book/new HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JContent-Length: 91^M^JCache-Control: max-age=0^M^JOrigin: http://localhost:3100^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JContent-Type: application/x-www-form-urlencoded^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/book/new^M^JAccept-Encoding: gzip, deflate, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1MzQ2LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---c1b33e1d5aac95005d12238f0cd36aad1b16fbed^M^J^M^Jtitle=a&author=b&genres=dsf&genres=e&price=fa&pub_date=2016-11-02&submit=Save+with+Mongoose') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop/Stream.pm line 95
+	Mojo::IOLoop::Stream::_read('Mojo::IOLoop::Stream=HASH(0x64e8b30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop/Stream.pm line 46
+	Mojo::IOLoop::Stream::__ANON__('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 143
+	eval {...} at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 143
+	Mojo::Reactor::Poll::_try('Mojo::Reactor::Poll=HASH(0xed28a8)', 'I/O watcher', 'CODE(0x62e6078)', 0) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 58
+	Mojo::Reactor::Poll::one_tick('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 99
+	Mojo::Reactor::Poll::start('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop.pm line 132
+	Mojo::IOLoop::start('Mojo::IOLoop=HASH(0x113d3b0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 35
+	Mojo::Server::Daemon::run('Mojo::Server::Daemon=HASH(0xb7c540)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 80
+	Mojo::Server::Morbo::_spawn('Mojo::Server::Morbo=HASH(0xb67c90)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 64
+	Mojo::Server::Morbo::_manage('Mojo::Server::Morbo=HASH(0xb67c90)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 44
+	Mojo::Server::Morbo::run('Mojo::Server::Morbo=HASH(0xb67c90)', 'script/catalog') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/bin/morbo line 21
+
+[Sat Nov 12 21:15:59 2016] [debug] Template "exception.development.html.ep" not found
+[Sat Nov 12 21:15:59 2016] [debug] Template "exception.html.ep" not found
+[Sat Nov 12 21:15:59 2016] [debug] Rendering template "mojo/debug.html.ep"
+[Sat Nov 12 21:15:59 2016] [debug] Rendering template "mojo/menubar.html.ep"
+[Sat Nov 12 21:15:59 2016] [debug] 500 Internal Server Error (0.077831s, 12.848/s)
+[Sat Nov 12 21:16:30 2016] [debug] POST "/book/new"
+[Sat Nov 12 21:16:30 2016] [debug] Routing to a callback
+[Sat Nov 12 21:16:30 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "book"
+[Sat Nov 12 21:16:30 2016] [debug] 302 Found (0.163969s, 6.099/s)
+[Sat Nov 12 21:16:30 2016] [debug] GET "/"
+[Sat Nov 12 21:16:30 2016] [debug] Routing to a callback
+[Sat Nov 12 21:16:30 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "index"
+[Sat Nov 12 21:16:30 2016] [debug] Rendering cached template "main/index.html.ep"
+[Sat Nov 12 21:16:30 2016] [debug] Rendering cached template "layouts/default.html.ep"
+[Sat Nov 12 21:16:30 2016] [debug] 200 OK (0.003055s, 327.332/s)
+[Sat Nov 12 21:16:32 2016] [debug] GET "/books/mongo"
+[Sat Nov 12 21:16:32 2016] [debug] Routing to a callback
+[Sat Nov 12 21:16:32 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "books"
+[Sat Nov 12 21:16:32 2016] [debug] Rendering template "main/books.html.ep"
+[Sat Nov 12 21:16:32 2016] [debug] Rendering cached template "layouts/default.html.ep"
+[Sat Nov 12 21:16:32 2016] [debug] 200 OK (0.007922s, 126.231/s)
+[Sat Nov 12 21:16:37 2016] [debug] GET "/books/mango"
+[Sat Nov 12 21:16:37 2016] [debug] Routing to a callback
+[Sat Nov 12 21:16:37 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "books"
+[Sat Nov 12 21:16:37 2016] [debug] Rendering cached template "main/books.html.ep"
+[Sat Nov 12 21:16:37 2016] [debug] Rendering cached template "layouts/default.html.ep"
+[Sat Nov 12 21:16:37 2016] [debug] 200 OK (0.006612s, 151.240/s)
+[Sat Nov 12 21:16:39 2016] [debug] GET "/books/mongoose"
+[Sat Nov 12 21:16:39 2016] [debug] Routing to a callback
+[Sat Nov 12 21:16:39 2016] [debug] Routing to controller "Catalog::Controller::Main" and action "books"
+[Sat Nov 12 21:16:39 2016] [error] Attribute (price) does not pass the type constraint because: Validation failed for 'Num' with value fa at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/x86_64-linux/Moose/Meta/Attribute.pm line 568
+	Moose::Meta::Attribute::set_value('Moose::Meta::Attribute=HASH(0x64d8248)', 'Catalog::Model::Book=HASH(0x6613f88)', 'fa') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mongoose/Engine/V1.pm line 268
+	Mongoose::Engine::V1::expand('Book', 'Catalog::Model::Book=HASH(0x6613f88)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mongoose/Cursor.pm line 19
+	Class::MOP::Class:::around('CODE(0x3b6b930)', 'Mongoose::Cursor=HASH(0x66161f8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/x86_64-linux/Class/MOP/Method/Wrapped.pm line 164
+	Mongoose::Cursor::_wrapped_all('Mongoose::Cursor=HASH(0x66161f8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/x86_64-linux/Class/MOP/Method/Wrapped.pm line 95
+	Mongoose::Cursor::all('Mongoose::Cursor=HASH(0x66161f8)') called at lib/Catalog/Controller/Main.pm line 44
+	Catalog::Controller::Main::books('Catalog::Controller::Main=HASH(0x6892938)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 119
+	Mojolicious::__ANON__(undef, 'Catalog::Controller::Main=HASH(0x6892938)', 'CODE(0x652b680)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 18
+	Mojolicious::Plugins::emit_chain('Mojolicious::Plugins=HASH(0x20520b8)', 'around_action', 'Catalog::Controller::Main=HASH(0x6892938)', 'CODE(0x652b680)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 87
+	Mojolicious::Routes::_action('Catalog=HASH(0x23e6830)', 'Catalog::Controller::Main=HASH(0x6892938)', 'CODE(0x652b680)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 166
+	Mojolicious::Routes::_controller('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x63c7c30)', 'HASH(0x662ccb8)', 1) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 36
+	Mojolicious::Routes::continue('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 38
+	Mojolicious::Routes::continue('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Routes.pm line 44
+	Mojolicious::Routes::dispatch('Mojolicious::Routes=HASH(0x62a22b8)', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 110
+	Mojolicious::dispatch('Catalog=HASH(0x23e6830)', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 120
+	Mojolicious::__ANON__(undef, 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 190
+	eval {...} at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 190
+	Mojolicious::_exception('CODE(0x6614300)', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 15
+	Mojolicious::Plugins::__ANON__ at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious/Plugins.pm line 18
+	Mojolicious::Plugins::emit_chain('Mojolicious::Plugins=HASH(0x20520b8)', 'around_dispatch', 'Mojolicious::Controller=HASH(0x63c7c30)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojolicious.pm line 126
+	Mojolicious::handler('Catalog=HASH(0x23e6830)', 'Mojo::Transaction::HTTP=HASH(0x65f70c0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server.pm line 68
+	Mojo::Server::__ANON__('Mojo::Server::Daemon=HASH(0xb7c540)', 'Mojo::Transaction::HTTP=HASH(0x65f70c0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::Server::Daemon=HASH(0xb7c540)', 'request', 'Mojo::Transaction::HTTP=HASH(0x65f70c0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 94
+	Mojo::Server::Daemon::__ANON__('Mojo::Transaction::HTTP=HASH(0x65f70c0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::Transaction::HTTP=HASH(0x65f70c0)', 'request') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Transaction/HTTP.pm line 61
+	Mojo::Transaction::HTTP::server_read('Mojo::Transaction::HTTP=HASH(0x65f70c0)', 'GET /books/mongoose HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/^M^JAccept-Encoding: gzip, deflate, sdch, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1Mzk3LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---f120de9191d74147785093c503902337dc40d093^M^J^M^J') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 209
+	Mojo::Server::Daemon::_read('Mojo::Server::Daemon=HASH(0xb7c540)', '6201697ad7a20dc690dc2c8067b0b319', 'GET /books/mongoose HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/^M^JAccept-Encoding: gzip, deflate, sdch, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1Mzk3LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---f120de9191d74147785093c503902337dc40d093^M^J^M^J') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 190
+	Mojo::Server::Daemon::__ANON__('Mojo::IOLoop::Stream=HASH(0x6630140)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/EventEmitter.pm line 15
+	Mojo::EventEmitter::emit('Mojo::IOLoop::Stream=HASH(0x6630140)', 'read', 'GET /books/mongoose HTTP/1.1^M^JHost: localhost:3100^M^JConnection: keep-alive^M^JUpgrade-Insecure-Requests: 1^M^JUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36^M^JAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8^M^JReferer: http://localhost:3100/^M^JAccept-Encoding: gzip, deflate, sdch, br^M^JAccept-Language: en-US,en;q=0.8,de;q=0.6^M^JCookie: _open_project_session=de829496016995931324edc5b633cc76; mojolicious=eyJleHBpcmVzIjoxNDc4OTg1Mzk3LCJsb2dnZWRfaW4iOjEsInRhcmdldCI6IlwvYm9va3NcL21hbmdvIn0---f120de9191d74147785093c503902337dc40d093^M^J^M^J') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop/Stream.pm line 95
+	Mojo::IOLoop::Stream::_read('Mojo::IOLoop::Stream=HASH(0x6630140)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop/Stream.pm line 46
+	Mojo::IOLoop::Stream::__ANON__('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 143
+	eval {...} at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 143
+	Mojo::Reactor::Poll::_try('Mojo::Reactor::Poll=HASH(0xed28a8)', 'I/O watcher', 'CODE(0x6634698)', 0) called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 58
+	Mojo::Reactor::Poll::one_tick('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Reactor/Poll.pm line 99
+	Mojo::Reactor::Poll::start('Mojo::Reactor::Poll=HASH(0xed28a8)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/IOLoop.pm line 132
+	Mojo::IOLoop::start('Mojo::IOLoop=HASH(0x113d3b0)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Daemon.pm line 35
+	Mojo::Server::Daemon::run('Mojo::Server::Daemon=HASH(0xb7c540)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 80
+	Mojo::Server::Morbo::_spawn('Mojo::Server::Morbo=HASH(0xb67c90)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 64
+	Mojo::Server::Morbo::_manage('Mojo::Server::Morbo=HASH(0xb67c90)') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/Mojo/Server/Morbo.pm line 44
+	Mojo::Server::Morbo::run('Mojo::Server::Morbo=HASH(0xb67c90)', 'script/catalog') called at /home/markus/perl5/perlbrew/perls/perl-5.22.0/bin/morbo line 21
+
+[Sat Nov 12 21:16:39 2016] [debug] Template "exception.development.html.ep" not found
+[Sat Nov 12 21:16:39 2016] [debug] Template "exception.html.ep" not found
+[Sat Nov 12 21:16:39 2016] [debug] Rendering cached template "mojo/debug.html.ep"
+[Sat Nov 12 21:16:39 2016] [debug] Rendering cached template "mojo/menubar.html.ep"
+[Sat Nov 12 21:16:39 2016] [debug] 500 Internal Server Error (0.05178s, 19.312/s)

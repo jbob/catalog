@@ -1,0 +1,8 @@
+% layout 'default';
+
+<form method="POST">
+Password:<br />
+<input class="form-control" name="password" type="password" />
+<button type="submit" class="btn btn-default"/>Login</button>
+</form>
+

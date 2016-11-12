@@ -1,0 +1,17 @@
+% layout 'default';
+% title 'Welcome';
+<h2>List (<%= $args->{type} %>)</h2>
+% for my $book (@{ $args->{result} }) {
+    <h3>Title: <%= link_to $book->{title} => "/book/$book->{_id}?type=$args->{type}" %></h3>
+    <h4>Author: <%= $book->{author} %></h4>
+    % for my $genre ( @{ $book->{genres} }) {
+        <h5>Genre: <%= $genre %></h5>
+    % }
+    <h5>Price: <%= $book->{price} %></h5>
+    % if (ref $book->{pub_date} eq 'DateTime') {
+        <h5>Publication Date: <%= $book->{pub_date}->strftime("%Y-%m-%d") %></h5>
+    % } else {
+        <h5>Publication Date: <%= $book->{pub_date} %></h5>
+    % }
+    <span><%= link_to "Send via E-Mail (minion)" => "/mail/$book->{_id}" %></span>
+% }
