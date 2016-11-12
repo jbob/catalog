@@ -4,8 +4,8 @@ with 'Mongoose::Document';
 
 has title => ( is => 'rw', isa => 'Str');
 has author => ( is => 'rw', isa => 'Str');
-has genres => ( is => 'rw', isa => 'ArrayRef[Str]');
-has price => (is => 'rw', isa => 'Num');
-has pub_date => (is => 'rw', isa => 'DateTime');
+has genres => ( is => 'rw', isa => 'ArrayRef[Str]', required => 0);
+has price => (is => 'rw', isa => 'Num', default => 23.42);
+has pub_date => (is => 'rw', isa => 'DateTime', required => 0);
 
 1;
