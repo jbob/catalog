@@ -1,4 +1,4 @@
-requires 'MongoDB';
+requires 'MongoDB', '> 1.0';
 requires 'Mango';
 #requires 'Minion';
 requires 'Minion', '< 6.0';
