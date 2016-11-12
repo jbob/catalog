@@ -61,6 +61,12 @@ sub book {
     my $submit = $params->{submit};
     delete $params->{submit};
 
+    # Delete empty params, otherwise defaults from the Book model
+    # do not kick in
+    for my $p (keys %$params) {
+        delete $params->{$p} if not $params->{$p};
+    }
+
     if($submit) {
         my $id;
         # Store a new book
