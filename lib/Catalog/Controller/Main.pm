@@ -66,9 +66,12 @@ sub book {
     for my $p (keys %$params) {
         delete $params->{$p} if not $params->{$p};
         if (ref $params->{$p} eq 'ARRAY') {
+            # Only keep non empty
+            $params->{$p} = [ grep { $_ ne '' } @{ $params->${p} } ];
             delete $params->{$p} if not @{ $params->{$p} };
         }
         if (ref $params->{$p} eq 'HASH') {
+            # WIP
             delete $params->{$p} if not %{ $params->{$p} };
         }
 
