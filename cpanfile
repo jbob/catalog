@@ -10,7 +10,7 @@ requires 'Mongoose';
 requires 'Mail::Builder::Simple';
 requires 'DateTime';
 requires 'DateTime::Format::Strptime';
-requires 'IO::Socket::SSL';
+requires 'IO::Socket::SSL', '>= 2.007';
 requires 'MIME::Base64';
 requires 'Authen::SASL';
 
