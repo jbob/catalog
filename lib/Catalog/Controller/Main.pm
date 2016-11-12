@@ -33,7 +33,7 @@ sub books {
     if ($type eq 'mango') {
         $result = $self->mango->find->all;
         for my $r (@$result) {
-            $r->{pub_date} = DateTime->from_epoch(epoch => $r->{pub_date}->to_epoch);
+            $r->{pub_date} = DateTime->from_epoch(epoch => $r->{pub_date}->to_epoch) if $r->{pub_date};
         }
     }
     if ($type eq 'mongo') {
