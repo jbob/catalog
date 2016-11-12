@@ -65,6 +65,13 @@ sub book {
     # do not kick in
     for my $p (keys %$params) {
         delete $params->{$p} if not $params->{$p};
+        if (ref $params->{$p} eq 'ARRAY') {
+            delete $params->{$p} if not @{ $params->{$p} };
+        }
+        if (ref $params->{$p} eq 'HASH') {
+            delete $params->{$p} if not %{ $params->{$p} };
+        }
+
     }
     if($params->{pub_date}) {
         my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
