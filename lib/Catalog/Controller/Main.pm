@@ -66,6 +66,10 @@ sub book {
     for my $p (keys %$params) {
         delete $params->{$p} if not $params->{$p};
     }
+    if($params->{pub_date}
+        my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
+        $params->{pub_date} = $format->parse_datetime($params->{pub_date});;
+    }
 
     if($submit) {
         my $id;
@@ -75,25 +79,17 @@ sub book {
         if($submit =~ /Mango$/) {
             # We should check here if our data model is honored
             # But that is what Mongoose is for
-            my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
-            $params->{pub_date} = $format->parse_datetime($params->{pub_date});;
             $id = $self->mango->insert($params);
         }
         if($submit =~ /MongoDB$/) {
             # We should check here if our data model is honored
             # But that is what Mongoose is for
-            my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
-            $params->{pub_date} = $format->parse_datetime($params->{pub_date});;
-            my $res = $self->mongo->insert_one($params);
             $id = $res->inserted_id;
         }
         if($submit =~ /Mongoose$/) {
             # Here Mongoose checks the values against our data model
             # We need to convert pub_date from String to a DateTime object, of
             # validation fails
-            my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
-            $params->{pub_date} = $format->parse_datetime($params->{pub_date});;
-            warn ref $params->{pub_date};
             my $book = Book->new($params);
             $id = $book->save();
         }
