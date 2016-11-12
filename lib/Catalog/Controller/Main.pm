@@ -97,8 +97,6 @@ sub book {
         $self->redirect_to("/");
         return;
     } else {
-        warn $type;
-        warn $id;
         if($id eq 'new') {
             # Display edit form
             $self->render('main/edit');
