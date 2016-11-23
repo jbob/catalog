@@ -14,7 +14,7 @@ sub nice_text {
   my $output = sprintf "%s was written by %s and costs %s.", $self->title, $self->author->name, $self->price;
   if($self->pub_date) {
     my $date = $self->pub_date->strftime("%Y");
-    $output .= sprintf " It as written in %s", $date;
+    $output .= sprintf " It was written in %s", $date;
   }
   return $output;
 }
