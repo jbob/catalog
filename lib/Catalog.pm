@@ -1,11 +1,8 @@
 package Catalog;
 use Mojo::Base 'Mojolicious';
-use Mango;
 use MongoDB;
 use Minion;
 use Minion::Backend::MongoDB;
-use Minion::Backend::Mango;
-use Minion::Backend::Storable;
 use Mongoose;
 use DateTime;
 use DateTime::Format::Strptime;
@@ -18,10 +15,6 @@ sub startup {
   my $config = $self->plugin('Config');
   $self->secrets($config->{secrets});
 
-  # All those backend do not yet work with minion 6
-  # See cpanfile
-  #$self->plugin('Minion', { Storable => $config->{minion_storable} });
-  #$self->plugin('Minion', { MongoDB => $config->{mongouri} . "/" . $config->{minion_mongo_database} });
   $self->plugin('Minion', { Mango => $config->{mongouri} . "/" . $config->{minion_mango_database} });
 
   $self->helper(auth => sub {
@@ -30,15 +23,6 @@ sub startup {
                and $con->session('logged_in')
                and $con->session('logged_in') == 1;
       return; # Ask for password
-  });
-
-  $self->helper(mango => sub {
-      state $mango = Mango->new($config->{mongouri});
-      my $coll = $mango->db($config->{database})->collection($config->{data_collection});
-  });
-
-  $self->helper(mongo => sub {
-      state $mongo = MongoDB->connect($config->{mongouri})->get_database($config->{database})->get_collection($config->{data_collection});
   });
 
   Mongoose->db($config->{database});
@@ -59,10 +43,6 @@ sub startup {
           my $mail = Mail::Builder::Simple->new;
           eval {
               $mail->send(
-                mail_client => {
-                    mailer => 'SMTP',
-                    mailer_args => $config->{mailer}
-                },
                 from => 'mail@markusko.ch',
                 to => 'mail@markusko.ch',
                 subject => $book->title,
@@ -93,7 +73,7 @@ sub startup {
   });
   $l->get('/')->to('main#index');
   $l->any('/book/:id')->to('main#book');
-  $l->get('/books/:type')->to('main#books');
+  $l->get('/books/')->to('main#books');
   $l->get('/mail/:id')->to('main#mail');
 }
 

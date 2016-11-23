@@ -4,7 +4,5 @@
 <li><%= link_to 'New book' => '/book/new' %></li>
 </ul>
 <ul>
-<li><%= link_to 'Book list (via MongoDB)' => '/books/mongo' %></li>
-<li><%= link_to 'Book list (via Mango)' => '/books/mango' %></li>
-<li><%= link_to 'Book list (via Mongoose)' => '/books/mongoose' %></li>
+<li><%= link_to 'Book list' => '/books' %></li>
 </ul>
