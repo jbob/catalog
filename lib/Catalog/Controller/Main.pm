@@ -42,7 +42,7 @@ sub book {
     delete $params->{submit};
 
     # Delete empty params, otherwise defaults from the Book model
-    # do not kick in
+    # do not kick in. Need to find a better solution
     for my $p (keys %$params) {
         delete $params->{$p} if not $params->{$p};
         if (ref $params->{$p} eq 'ARRAY') {
@@ -60,9 +60,6 @@ sub book {
     if($submit) {
         my $id;
         # Store a new book
-        # Here Mongoose checks the values against our data model
-        # We need to convert pub_date from String to a DateTime object, of
-        # validation fails
 		my $author = Author->new({ name => $params->{author}, gender => 'f'});
 		$params->{author} = $author;
         my $book = Book->new($params);
