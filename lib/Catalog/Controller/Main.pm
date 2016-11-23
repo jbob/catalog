@@ -56,11 +56,6 @@ sub book {
         }
 
     }
-	# Do that with coersion
-    #if($params->{pub_date}) {
-    #    my $format = DateTime::Format::Strptime->new(pattern => '%Y-%m-%d', on_error => 'croak');
-    #    $params->{pub_date} = $format->parse_datetime($params->{pub_date});;
-    #}
 
     if($submit) {
         my $id;
@@ -68,6 +63,8 @@ sub book {
         # Here Mongoose checks the values against our data model
         # We need to convert pub_date from String to a DateTime object, of
         # validation fails
+		my $author = Author->new({ name => $params->{author}, gender => 'f'});
+		$params->{author} = $author;
         my $book = Book->new($params);
         $id = $book->save();
         $self->redirect_to("/");

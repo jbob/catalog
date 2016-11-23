@@ -15,7 +15,7 @@ sub startup {
   my $config = $self->plugin('Config');
   $self->secrets($config->{secrets});
 
-  $self->plugin('Minion', { Mango => $config->{mongouri} . "/" . $config->{minion_mango_database} });
+  $self->plugin('Minion', { MongoDB => $config->{mongouri} . "/" . $config->{minion_mongo_database} });
 
   $self->helper(auth => sub {
       my $con = shift;
@@ -46,7 +46,7 @@ sub startup {
                 from => 'mail@markusko.ch',
                 to => 'mail@markusko.ch',
                 subject => $book->title,
-                plaintext => $book->title ."\r\n". $book->author
+                plaintext => $book->title ."\r\n". $book->author->name
               );
           };
           if ($@) {

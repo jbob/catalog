@@ -3,7 +3,7 @@
 <h2>List</h2>
 % for my $book (@{ $args->{result} }) {
     <h3>Title: <%= link_to $book->title => "/book/".$book->_id %></h3>
-    <h4>Author: <%= $book->author %></h4>
+    <h4>Author: <%= $book->author->name %></h4>
     % if($book->genres) {
         % for my $genre ( @{ $book->genres }) {
             <h5>Genre: <%= $genre %></h5>
